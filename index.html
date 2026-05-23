@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aether — Weather</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+<div class="atmo">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
+<div class="stars" id="stars"></div>
+ 
+<div class="wrap">
+ 
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">A<em>e</em>ther</div>
+    <div class="logo-sub">Real-time Weather Intelligence</div>
+  </div>
+ 
+  <!-- Search -->
+  <div class="search-section">
+    <div class="search-box">
+      <input id="inp" type="text" placeholder="Search any city in the world…" autocomplete="off"/>
+      <button class="search-btn" id="btn" onclick="go()">Search</button>
+    </div>
+  </div>
+ 
+  <!-- Chips -->
+  <div class="chips">
+    <span class="chip" onclick="pick('New Delhi')">🇮🇳 New Delhi</span>
+    <span class="chip" onclick="pick('Mumbai')">🇮🇳 Mumbai</span>
+    <span class="chip" onclick="pick('New York')">🇺🇸 New York</span>
+    <span class="chip" onclick="pick('London')">🇬🇧 London</span>
+    <span class="chip" onclick="pick('Tokyo')">🇯🇵 Tokyo</span>
+    <span class="chip" onclick="pick('Dubai')">🇦🇪 Dubai</span>
+    <span class="chip" onclick="pick('Paris')">🇫🇷 Paris</span>
+    <span class="chip" onclick="pick('Sydney')">🇦🇺 Sydney</span>
+  </div>
+ 
+  <!-- Unit toggle -->
+  <div class="unit-row">
+    <div class="unit-pill">
+      <button class="ubtn on" id="btnC" onclick="setUnit('C')">°C</button>
+      <button class="ubtn" id="btnF" onclick="setUnit('F')">°F</button>
+    </div>
+  </div>
+ 
+  <!-- Error -->
+  <div class="error" id="err"></div>
+ 
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="ring"></div>
+    <span style="letter-spacing:2px">READING THE SKIES</span>
+  </div>
+ 
+  <!-- Main card -->
+  <div class="main-card" id="card">
+    <div class="card-hero">
+      <div class="top-row">
+        <div class="location-block">
+          <div class="city" id="dCity">—</div>
+          <div class="country-time">
+            <span id="dCountry">—</span>
+            <span class="dot"></span>
+            <span id="dTime">—</span>
+          </div>
+        </div>
+        <div class="condition-badge">
+          <span class="badge-icon" id="dEmoji">🌤</span>
+          <span id="dCond">—</span>
+        </div>
+      </div>
+ 
+      <div class="temp-section">
+        <div class="temp-giant" id="dTemp">—</div>
+        <div class="temp-unit-big" id="dUnitLabel">°C</div>
+      </div>
+ 
+      <div class="weather-visual" id="dIcon"></div>
+    </div>
+ 
+    <div class="card-divider"></div>
+ 
+    <div class="card-stats">
+      <div class="stat">
+        <div class="stat-icon">💧</div>
+        <div class="stat-val" id="dHum">—</div>
+        <div class="stat-lbl">Humidity</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">💨</div>
+        <div class="stat-val" id="dWind">—</div>
+        <div class="stat-lbl">Wind</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">👁</div>
+        <div class="stat-val" id="dVis">—</div>
+        <div class="stat-lbl">Visibility</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">🌡</div>
+        <div class="stat-val" id="dFeel">—</div>
+        <div class="stat-lbl">Feels Like</div>
+      </div>
+    </div>
+ 
+    <div class="feel-strip">
+      <span>High / Low</span>
+      <div class="hi-lo">
+        <span class="hi" id="dHi">—</span>
+        <span class="sep">/</span>
+        <span class="lo" id="dLo">—</span>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Forecast -->
+  <div class="forecast" id="strip"></div>
+  <div class="ai-tag" id="aiTag"></div>
+</div>
+ 
+<script src="/script.js"></script>
+ 
+</body>
+</html> 

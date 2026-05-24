@@ -1,4 +1,4 @@
-const API_KEY = "c5db8032ae74c85d6eb41082cf93b684";
+const API_KEY = "30a0be0a1068f843d9b4ef1c33f7553e";
 
 let unit = 'C';
 let cache = null;
